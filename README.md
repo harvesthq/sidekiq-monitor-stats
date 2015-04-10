@@ -53,8 +53,13 @@ This is an example of the output you'll get:
     {
       "hostname":"kip1.example.com",
       "pid":23324,
+      "tag": "foo",
+      "started_at": "2015-04-10T13:04:22+00:00",
       "queues":[
         "high"
+      ],
+      "labels": [
+        "reliable"
       ],
       "concurrency":5,
       "busy":2
@@ -62,9 +67,14 @@ This is an example of the output you'll get:
     {
       "hostname":"kip2.example.com",
       "pid":23390,
+      "tag": "foo",
+      "started_at": "2015-04-10T13:04:22+00:00",
       "queues":[
         "default",
         "low"
+      ],
+      "labels": [
+        "reliable"
       ],
       "concurrency":5,
       "busy":5
