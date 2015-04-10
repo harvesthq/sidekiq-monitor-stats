@@ -1,6 +1,8 @@
 # Sidekiq Monitor Stats
 
+[![Gem Version](https://badge.fury.io/rb/sidekiq-monitor-stats.svg)](http://badge.fury.io/rb/sidekiq-monitor-stats)
 [![Build Status](https://travis-ci.org/harvesthq/sidekiq-monitor-stats.svg)](https://travis-ci.org/harvesthq/sidekiq-monitor-stats)
+[![Code Climate](https://codeclimate.com/github/harvesthq/sidekiq-monitor-stats/badges/gpa.svg)](https://codeclimate.com/github/harvesthq/sidekiq-monitor-stats)
 
 Add an endpoint to your running application that is running Sidekiq that
 returns useful data in JSON format.
