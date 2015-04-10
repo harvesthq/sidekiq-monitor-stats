@@ -1,5 +1,7 @@
 # Sidekiq Monitor Stats
 
+[![Build Status](https://travis-ci.org/harvesthq/sidekiq-monitor-stats.svg)](https://travis-ci.org/harvesthq/sidekiq-monitor-stats)
+
 Add an endpoint to your running application that is running Sidekiq that
 returns useful data in JSON format.
 
