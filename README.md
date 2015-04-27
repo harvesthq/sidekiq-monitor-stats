@@ -97,3 +97,9 @@ through in parallel. The `busy` is how many of those are in use.
 If you plan on using this for your monitoring, the `latency` is a much
 better metric than the `backlog`, and you can use the total `concurrency` and
 total `busy` to know how much of your available workforce is in use.
+
+## Sensu Scripts
+
+[These sensu scripts](https://github.com/sensu/sensu-community-plugins/tree/master/plugins/sidekiq) are designed to work with this gem to provide sane monitoring. The check script will raise warnings if the latency gets above certain threshold, and the metrics script will record useful metrics to help you figure out how your sidekiq is doing and if you need more workers.
+
+If you're using some other monitoring tool they are good inspiration to know how this gem was intended to be used.
