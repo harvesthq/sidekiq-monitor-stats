@@ -100,6 +100,6 @@ total `busy` to know how much of your available workforce is in use.
 
 ## Sensu Scripts
 
-[These sensu scripts](https://github.com/sensu/sensu-community-plugins/tree/master/plugins/sidekiq) are designed to work with this gem to provide sane monitoring. The check script will raise warnings if the latency gets above certain threshold, and the metrics script will record useful metrics to help you figure out how your sidekiq is doing and if you need more workers.
+[These sensu scripts](https://github.com/sensu-plugins/sensu-plugins-sidekiq) are designed to work with this gem to provide sane monitoring. The check script will raise warnings if the latency gets above certain threshold, and the metrics script will record useful metrics to help you figure out how your sidekiq is doing and if you need more workers.
 
 If you're using some other monitoring tool they are good inspiration to know how this gem was intended to be used.
