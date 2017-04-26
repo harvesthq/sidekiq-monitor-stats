@@ -5,3 +5,6 @@ services:
 rvm:
   - 2.3.4
   - 2.4.1
+gemfile:
+  - gemfiles/sidekiq_5.gemfile
+  - gemfiles/sidekiq_4.gemfile
