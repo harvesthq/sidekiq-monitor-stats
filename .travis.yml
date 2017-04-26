@@ -3,6 +3,8 @@ cache: bundler
 services:
   - redis-server
 rvm:
-  - 2.0.0
-  - 2.1
-  - 2.2
+  - 2.3.4
+  - 2.4.1
+gemfile:
+  - gemfiles/sidekiq_5.gemfile
+  - gemfiles/sidekiq_4.gemfile
