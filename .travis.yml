@@ -3,6 +3,5 @@ cache: bundler
 services:
   - redis-server
 rvm:
-  - 2.0.0
-  - 2.1
-  - 2.2
+  - 2.3.4
+  - 2.4.1
