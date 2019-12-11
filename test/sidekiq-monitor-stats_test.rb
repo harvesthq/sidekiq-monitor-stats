@@ -8,6 +8,7 @@ class Sidekiq::Monitor::StatsTest < Minitest::Test
   def test_returns_empty_data
     assert_equal({}, stats.queue_metrics)
     assert_equal([], stats.process_metrics)
+    assert_equal([], stats.job_metrics)
   end
 
   def test_with_some_data
