@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    sidekiq-monitor-stats (0.0.2)
+    sidekiq-monitor-stats (0.0.3)
       sidekiq
 
 GEM
@@ -53,4 +53,4 @@ DEPENDENCIES
   sinatra
 
 BUNDLED WITH
-   1.14.6
+   1.17.2
