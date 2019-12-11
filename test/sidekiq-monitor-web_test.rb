@@ -28,6 +28,13 @@ class Sidekiq::Monitor::WebTest < Minitest::Test
         'queues'     => ['default', 'high'],
         'concurrency'=> 25,
         'busy'       => 4
+      ],
+      job_metrics: [
+        'process' => 'foo:1234',
+        'thread'  => '1001',
+        'jid'     => '1234abc',
+        'queue'   => 'default',
+        'job'     => 'WebWorker',
       ]
     )
     get '/monitor-stats'
@@ -45,6 +52,14 @@ class Sidekiq::Monitor::WebTest < Minitest::Test
     assert_equal ['default','high'], process['queues']
     assert_equal 25,                 process['concurrency']
     assert_equal 4,                  process['busy']
+
+    assert_equal 1, body['jobs'].size
+    job = body['jobs'].first
+    assert_equal 'foo:1234',  job['process']
+    assert_equal '1001',      job['thread']
+    assert_equal '1234abc',   job['jid']
+    assert_equal 'default',   job['queue']
+    assert_equal 'WebWorker', job['job']
   end
 
   private
