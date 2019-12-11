@@ -79,6 +79,16 @@ This is an example of the output you'll get:
       "concurrency":5,
       "busy":5
     }
+  ],
+  "jobs": [
+    {
+      "process": "foo:1234",
+      "thread": "1001",
+      "jid": "1234abc",
+      "queue": "default",
+      "job": "WebWorker",
+      "run_at": "2015-04-10T15:07:52+00:00"
+    }
   ]
 }
 ```
