@@ -28,6 +28,21 @@ module Sidekiq
           }
         end
       end
+
+      def job_metrics
+        Sidekiq::Workers.new.map do |process, thread, msg|
+          job = Sidekiq::Job.new(msg['payload'])
+
+          {
+            process: process,
+            thread:  thread,
+            jid:     job.jid,
+            queue:   msg['queue'],
+            job:     job.display_class,
+            run_at:  Time.at(msg['run_at'])
+          }
+        end
+      end
     end
   end
 end
