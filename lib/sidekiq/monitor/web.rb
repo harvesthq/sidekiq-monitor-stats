@@ -9,7 +9,8 @@ module Sidekiq
 
           data = {
             queues:    monitor_stats.queue_metrics,
-            processes: monitor_stats.process_metrics
+            processes: monitor_stats.process_metrics,
+            jobs:      monitor_stats.job_metrics
           }
 
           if Sidekiq::VERSION >= "5.0.0"
