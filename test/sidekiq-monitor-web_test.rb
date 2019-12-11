@@ -16,6 +16,7 @@ class Sidekiq::Monitor::WebTest < Minitest::Test
     body = Sidekiq.load_json(last_response.body)
     assert_equal({}, body['queues'])
     assert_equal([], body['processes'])
+    assert_equal([], body['jobs'])
   end
 
   def test_monitor_stats_with_some_data
