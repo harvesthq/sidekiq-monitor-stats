@@ -31,6 +31,18 @@ class Sidekiq::Monitor::StatsTest < Minitest::Test
       }
 
       conn.hmset('foo:1234', 'info', Sidekiq.dump_json(process_stats), 'at', @started_at.to_f, 'busy', 4)
+
+      job_stats = {
+        queue: 'default',
+        payload: {
+          class: 'WebWorker',
+          args: [1,'abc'],
+          jid: '1234abc'
+        },
+        run_at: @started_at.to_f
+      }
+
+      conn.hmset('foo:1234:workers', 1001, Sidekiq.dump_json(job_stats))
     end
 
     assert_equal({ backlog: 1, latency: 0 }, stats.queue_metrics['default'])
@@ -44,6 +56,14 @@ class Sidekiq::Monitor::StatsTest < Minitest::Test
     assert_equal 25,           process[:concurrency]
     assert_equal 4,            process[:busy]
     assert_in_delta @started_at, process[:started_at], 0.01
+
+    job = stats.job_metrics.first
+    assert_equal 'foo:1234',  job[:process]
+    assert_equal '1001',      job[:thread]
+    assert_equal '1234abc',   job[:jid]
+    assert_equal 'default',   job[:queue]
+    assert_equal 'WebWorker', job[:job]
+    assert_in_delta @started_at, job[:run_at], 0.01
   end
 
   private
