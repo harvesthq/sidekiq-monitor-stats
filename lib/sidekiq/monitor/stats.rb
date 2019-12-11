@@ -30,11 +30,10 @@ module Sidekiq
       end
 
       def job_metrics
-        jobs = []
-
-        Sidekiq::Workers.new.each do |process, thread, msg|
+        Sidekiq::Workers.new.map do |process, thread, msg|
           job = Sidekiq::Job.new(msg['payload'])
-          jobs << {
+
+          {
             process: process,
             thread: thread,
             jid: job.jid,
@@ -43,8 +42,6 @@ module Sidekiq
             run_at: Time.at(msg['run_at'])
           }
         end
-
-        jobs
       end
     end
   end
