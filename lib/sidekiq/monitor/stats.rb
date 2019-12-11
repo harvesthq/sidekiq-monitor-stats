@@ -35,11 +35,11 @@ module Sidekiq
 
           {
             process: process,
-            thread: thread,
-            jid: job.jid,
-            queue: msg['queue'],
-            job: job.display_class,
-            run_at: Time.at(msg['run_at'])
+            thread:  thread,
+            jid:     job.jid,
+            queue:   msg['queue'],
+            job:     job.display_class,
+            run_at:  Time.at(msg['run_at'])
           }
         end
       end
