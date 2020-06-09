@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "sidekiq-monitor-stats"
-  spec.version       = "0.0.3"
+  spec.version       = "0.0.4"
   spec.authors       = ["Albert Llop"]
   spec.email         = ["albert@getharvest.com"]
   spec.summary       = %q{Add an endpoint to your running application that is running Sidekiq that returns useful data in JSON format.}
