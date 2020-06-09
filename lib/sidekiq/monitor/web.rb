@@ -1,7 +1,7 @@
 require 'sidekiq/monitor/stats'
 
 module Sidekiq
-  module Monitor
+  class Monitor
     module Web
       def self.registered(app)
         app.get "/monitor-stats" do

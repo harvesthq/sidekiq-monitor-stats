@@ -48,7 +48,7 @@ DEPENDENCIES
   mocha
   rack-test
   rake (~> 10.0)
-  sidekiq (< 5.0)
+  sidekiq (~> 4.0)
   sidekiq-monitor-stats!
   sinatra
 

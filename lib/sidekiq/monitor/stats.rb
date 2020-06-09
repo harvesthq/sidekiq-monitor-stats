@@ -1,9 +1,12 @@
 require 'sidekiq/api'
 require 'sidekiq/web'
+if Sidekiq::VERSION >= "6.0.0"
+  require 'sidekiq/monitor'
+end
 require 'sidekiq/monitor/web'
 
 module Sidekiq
-  module Monitor
+  class Monitor
     class Stats
       def queue_metrics
         Sidekiq::Queue.all.each_with_object({}) do |queue, hash|
