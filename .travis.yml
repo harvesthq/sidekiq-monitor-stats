@@ -2,11 +2,14 @@ language: ruby
 cache: bundler
 services:
   - redis-server
+before_install:
+  - yes | gem update --system --force
+  - gem install bundler -v 1.17.2
 rvm:
-  - 2.3.4
-  - 2.4.1
   - 2.5
   - 2.6
+  - 2.7
 gemfile:
+  - gemfiles/sidekiq_6.gemfile
   - gemfiles/sidekiq_5.gemfile
   - gemfiles/sidekiq_4.gemfile
