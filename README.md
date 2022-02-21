@@ -1,3 +1,9 @@
+## ⚠️ This repository is no longer maintained ⚠️
+
+This gem is no longer used by Harvest. It is known not to work well with Sidekiq 6.
+
+Please, feel free to fork if you need any changes, and if you are interested in maintaining it, get in touch and we'll figure it out.
+
 # Sidekiq Monitor Stats
 
 [![Gem Version](https://badge.fury.io/rb/sidekiq-monitor-stats.svg)](http://badge.fury.io/rb/sidekiq-monitor-stats)
